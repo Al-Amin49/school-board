@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,14 +8,24 @@ export const metadata: Metadata = {
   description: "Next.js School Management System",
 };
 
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+
+<div className="h-screen flex">
+    {/* left */}
+    <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] bg-red-500">
+left
+    </div>
+
+
+    {/* right */}
+    <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:[86%] bg-[#F7F8FA] ">right</div>
+
+</div>
+
+  )
 }
